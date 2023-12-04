@@ -1,0 +1,19 @@
+* {
+
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+  
+  }
+  h1{
+    font-weight: 500;
+  }
+  .custom-position {
+    position: relative;
+    top: 50%;
+    left: 59%;
+  }
+  .custom-bg-gray{
+    background-color: #f0f0f0;
+  }
+  
+  

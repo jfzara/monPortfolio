@@ -1,0 +1,89 @@
+#logo-link {
+    text-decoration: none; /* remove underline */
+    color: black; /* change text color */
+    font-weight: normal; /* remove bold */
+}
+
+.nav-bar li { /* selector right of the space is within (a child of) the part of the selector to the left */
+    list-style-type: none; /* remove bullet */
+    display: inline; /* display horizontally */
+    margin-right: 60px; /* add space after list item */
+}
+
+.nav-bar a {
+    text-decoration: none; /* remove underline */
+    color: grey; /* change text color */
+    font-weight: normal; /* change font weight */
+    font-size: 15px; 
+}
+
+.nav-bar {
+    text-align: center; /* align text */
+}
+
+nav {
+    margin-bottom: 40px;
+}
+
+footer {
+    font-size: 11px;
+    text-align: center; /* align text */
+    color: grey; /* change text color */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+h1 {
+    text-align: center; /* align text */
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+body {
+    font-family: "Freight Sans Book", "Freight Sans Book", sans-serif; /* change font of all elements inside body */
+}
+
+h2 {
+    font-weight: normal; /* remove bold */
+    color: gray;
+    text-align: center;
+}
+
+/************** social media icon *******************/
+
+.social-media-icon li {
+    list-style-type: none; /* remove bullet */
+    display: inline-block; /* create horizontal list */
+}
+
+.social-media-icon a {
+    text-decoration: none; /* remove underline */
+    color: black;
+}
+
+.social-media-icon ul {
+    text-align: center; /* center icon */
+    padding-left: 0;
+}
+
+.social-media-icon {
+    margin-bottom: 60px; /* add space under social media icon */
+}
+
+.social-media-icon li:nth-child(1) {
+    padding-right: 10px; /* add space between icon */
+}
+
+.social-media-icon li:nth-child(2) {
+    padding-left: 10px; /* add space between icon */
+}
+
+
+/*********************************************************/
+
+body {
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
