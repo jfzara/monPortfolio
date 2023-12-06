@@ -13,65 +13,100 @@
 <body>
 
   <div class="container-fluid p-4 d-flex  align-items-center ">
-
+  
     <h1 class="text-center w-100 mb-4 p-3">COMPOSITIONS ARTISTIQUES</h1>
     <div class="col-auto d-flex  ">
       <div class="panier d-flex  align-items-center align-self-end">
         <p class="nombre_d_articles m-0 custom-position" id="nombre_d_articles"> 0 </p>
-        <img src="Images\Icones\icons8-cart-50.png" alt="icône panier" class="panier">
+        <img src="Images/Icones/icons8-cart-50.png" alt="icône panier" class="panier">
       </div>
     </div>
   </div>
 
-  <div class="container"  data-masonry='{"percentPosition": true }'>
-    <div class="row">
-      <div class="col">
-        
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\art-2610961_1280.jpg" class="w-100 mb-4">
-        </a>
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\ballerina-3610996_1280.jpg" class="w-100 mb-4">
-        </a>
-        <a href="#"  id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\art-2610961_1280.jpg" class="w-100 mb-4">
+  <!-- START container -->
+  <div class="container-lg my-5"> <!-- class container is required when using Bootstrap's grid system -->
+    <div class="row" data-masonry='{"percentPosition": true }'> <!-- Créer 1 row seulement -->
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/bodypainting-4696543_1280.jpg" class="img-fluid" alt="Responsive image">
         </a>
       </div>
-      <div class="col">
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\scream-2725364_1280.jpg" class="w-100">
-        </a>
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\fruit-6665884_1280.jpg" class="w-100 mb-4">
-        </a>
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\face-2889961_1280.jpg" class="w-100 mb-4">
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/fantasy-2767173_1280.jpg" class="img-fluid" alt="Responsive image">
         </a>
       </div>
-      <div class="col">
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\couple-1537158_1280.jpg" class="w-100 mb-4">
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/black-2773006_1280.jpg "  class="img-fluid" alt="Responsive image">
         </a>
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\black-2773006_1280.jpg" class="w-100 ">
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/couple-1537158_1280.jpg" class="img-fluid" alt="Responsive image">
         </a>
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\fantasy-2767173_1280.jpg" class="w-100 mb-4">
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/face-2889961_1280.jpg" class="img-fluid" alt="Responsive image">
         </a>
-        <a href="#" id="blur" onclick="afficherGrandeImage()">
-          <img src="Images\Compositions_artistiques\bodypainting-4696543_1280.jpg" class="w-100 mb-4">
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/fruit-6665884_1280.jpg" class="img-fluid" alt="Responsive image">
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/scream-2725364_1280.jpg" class="img-fluid" alt="Responsive image">
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/art-2610961_1280.jpg" class="img-fluid" alt="Responsive image">
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/ballerina-3610996_1280.jpg" class="img-fluid" alt="Responsive image">
+        </a>
+      </div>
+      <div class="col-sm-6 col-lg-4 p-1">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="Images/Compositions_artistiques/art-2610961_1280.jpg" class="img-fluid" alt="Responsive image">
         </a>
       </div>
     </div>
   </div>
+ <!-- END container -->
 
-
-
-  <script src="compositions_artistiques.js"></script>
-
- 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- START modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="Images/Compositions_artistiques/bodypainting-4696543_1280.jpg" id="modalImage" class="img-fluid" alt="Responsive image">
+       
+        <p class="prix" id="modalPrix"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <!-- Bouton d'achat -->
+        <button type="button" class="btn btn-primary btn-add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+   
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END modal -->
+  <!-- Link to Bootstrap's JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Link to Masonry -->
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 <script src= "compositions_artistiques.js"> </script>
 </body>
 
