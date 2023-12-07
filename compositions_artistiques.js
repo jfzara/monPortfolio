@@ -12,11 +12,15 @@ var Compositions_Artistiques_Array = [
     { nom: 'Composition_Artistique10', prix: 450, url: 'umbrellas-1834286_640.jpg' },
 ];
 
+// Variables globales
+var currentIndex;
+var quantityInput;
+
 // Fonction pour ouvrir le modal avec les détails de l'image
 function openModal(index) {
     var modalImage = document.getElementById('modalImage');
     var modalPrix = document.getElementById('modalPrix');
-    var quantityInput = document.getElementById('quantity');
+    quantityInput = document.getElementById('quantity'); // Déplacer la déclaration à un niveau supérieur
     var prixTotalElement = document.getElementById('prixTotal');
     
     // Mettez à jour l'image et le prix en fonction de l'index
@@ -33,11 +37,12 @@ function openModal(index) {
     quantityInput.addEventListener('input', function () {
         updatePrixTotal();
     });
+
+    currentIndex = index; // Définir currentIndex avec l'index actuel
 }
 
 // Fonction pour mettre à jour le prix total en fonction de la quantité
 function updatePrixTotal() {
-    var quantityInput = document.getElementById('quantity');
     var prixTotalElement = document.getElementById('prixTotal');
     
     // Récupérer la quantité et le prix unitaire
@@ -48,19 +53,13 @@ function updatePrixTotal() {
     var prixTotal = quantity * prixUnitaire;
 
     // Mettre à jour l'affichage du prix total
-    prixTotalElement.textContent = 'Prix total: $' + prixTotal.toFixed(2);
+    prixTotalElement.textContent = 'Prix total: ' + prixTotal + ' €';
 }
-
-// Ajouter un auditeur d'événements pour le changement de quantité
-quantityInput.addEventListener('input', function () {
-    updatePrixTotal();
-});
 
 // Fonction pour ajouter un article au panier
 function addToCart() {
     // Logique pour ajouter au panier (utilisez le localStorage)
     // Pour cet exemple, nous incrémentons le nombre d'articles dans le panier de la quantité sélectionnée
-    var quantityInput = document.getElementById('quantity');
     var quantity = parseInt(quantityInput.value);
     
     var nombreArticles = localStorage.getItem('nombreArticles') || 0;
@@ -71,10 +70,6 @@ function addToCart() {
     updateCartCount();
 }
 
-
-
-
-
 // Fonction pour remettre à zéro le panier
 function resetCart() {
     // Logique pour remettre à zéro le panier (utilisez le localStorage)
@@ -82,6 +77,41 @@ function resetCart() {
 
     // Mettez à jour le nombre d'articles dans le panier
     updateCartCount();
+}
+
+// Fonction pour mettre à jour le prix total en fonction de la quantité
+function updatePrixTotal() {
+    var prixTotalElement = document.getElementById('prixTotal');
+
+    // Assurez-vous que currentIndex est défini
+    if (typeof currentIndex !== 'undefined' && Compositions_Artistiques_Array[currentIndex]) {
+        // Récupérer la quantité et le prix unitaire
+        var quantity = parseInt(quantityInput.value);
+        var prixUnitaire = Compositions_Artistiques_Array[currentIndex].prix;
+
+        // Calculer le prix total
+        var prixTotal = quantity * prixUnitaire;
+
+        // Mettre à jour l'affichage du prix total
+        prixTotalElement.textContent = 'Prix total: ' + prixTotal + ' $';
+    } else {
+        console.error('L\'index currentIndex est indéfini ou hors des limites du tableau.');
+    }
+}
+
+// Fonction pour vider le panier
+function viderPanier() {
+    // Logique pour vider le panier (localStorage, etc.)
+    localStorage.removeItem('nombreArticles');
+    // Vous devrez également supprimer les articles spécifiques du panier
+    // localStorage.removeItem('panier');
+    
+    // Mettez à jour le nombre d'articles dans le panier
+    updateCartCount();
+
+    // Vous pouvez également réinitialiser d'autres éléments du panier si nécessaire
+    // document.getElementById('prixTotalPanier').textContent = '0 $';
+    // document.getElementById('contenuPanier').innerHTML = '';
 }
 
 // Fonction pour mettre à jour le nombre d'articles dans le panier
@@ -104,36 +134,16 @@ function updateCartCount() {
     }
 }
 
-// Fonction pour vider le panier
-function viderPanier() {
-    // Logique pour vider le panier (localStorage, etc.)
-    localStorage.removeItem('nombreArticles');
-    // Vous devrez également supprimer les articles spécifiques du panier
-    // localStorage.removeItem('panier');
-    
-    // Mettez à jour le nombre d'articles dans le panier
-    updateCartCount();
-
-    // Vous pouvez également réinitialiser d'autres éléments du panier si nécessaire
-    // document.getElementById('prixTotalPanier').textContent = '0 $';
-    // document.getElementById('contenuPanier').innerHTML = '';
-}
-
 // Assurez-vous que la fonction d'initialisation est appelée après le chargement de la page
 window.onload = function () {
-    // Initialiser d'autres fonctionnalités si nécessaire
-    // ...
-
   
-
     // Styliser le panier et appliquer un curseur de type pointer
-    var panierElement = document.document.getElementById('lien_page_panier');('lien_page_panier');
-        panierElement.style.cursor = "pointer";
-   
-        var nombreArticlesTexte = document.getElementById("nombre_d_articles");
-        nombreArticlesTexte.style.cursor = "pointer";
+    var panierElement = document.getElementById('lien_page_panier');
+    panierElement.style.cursor = "pointer";
 
-      // Mettez à jour le nombre d'articles dans le panier lors du chargement de la page
-      updateCartCount();
-   
+    var nombreArticlesTexte = document.getElementById("nombre_d_articles");
+    nombreArticlesTexte.style.cursor = "pointer";
+
+    // Mettez à jour le nombre d'articles dans le panier lors du chargement de la page
+    updateCartCount();
 };
