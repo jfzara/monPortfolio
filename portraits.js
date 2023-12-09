@@ -1,21 +1,21 @@
 // Tableau des images
-var Compositions_Artistiques_Array = [
-    { nom: 'Composition_Artistique1', prix: 500, url: 'bodypainting-4696543_1280.jpg' },
-    { nom: 'Composition_Artistique2', prix: 300, url: 'art-2610961_1280.jpg' },
-    { nom: 'Composition_Artistique3', prix: 800, url: 'fantasy-2767173_1280.jpg' },
-    { nom: 'Composition_Artistique4', prix: 400, url: 'face-2889961_1280.jpg' },
-    { nom: 'Composition_Artistique5', prix: 600, url: 'man-80101_1280.jpg' },
-    { nom: 'Composition_Artistique6', prix: 350, url: 'paint-2985569_640.jpg' },
-    { nom: 'Composition_Artistique7', prix: 900, url: 'silhouette-2589471_640.jpg' },
-    { nom: 'Composition_Artistique8', prix: 250, url: 'woman-7697743_1280.jpg' },
-    { nom: 'Composition_Artistique9', prix: 700, url: 'woman-5953619_1280.jpg' },
-    { nom: 'Composition_Artistique10', prix: 450, url: 'umbrellas-1834286_640.jpg' },
+var Portraits_Array = [
+    { nom: 'Portrait1', prix: 500, url: 'ambassador-852766_1280.jpg' },
+    { nom: 'Portrait2', prix: 300, url: 'black-5562970_1280.jpg' },
+    { nom: 'Portrait3', prix: 800, url: 'boy-509488_1280.jpg' },
+    { nom: 'Portrait4', prix: 400, url: 'girl-2205813_1280.jpg' },
+    { nom: 'Portrait5', prix: 600, url: 'human-3782189_1280.jpg' },
+    { nom: 'Portrait6', prix: 350, url: 'male-2634974_1280.jpg' },
+    { nom: 'Portrait7', prix: 900, url: 'man-2442565_1280.jpg' },
+    { nom: 'Portrait8', prix: 250, url: 'model-807555_1280.jpg' },
+    { nom: 'Portrait9', prix: 700, url: 'portrait-3157821_1280.jpg' },
+    { nom: 'Portrait10', prix: 450, url: 'portrait-3204843_1280.jpg' },
 ];
 
 // Variables globales
 var currentIndex;
 var quantityInput = document.getElementById('quantity');
-var prixTotalElement = document.getElementById('prixTotal');
+
 
 
 // Fonction pour initialiser le panier à partir du localStorage
@@ -32,15 +32,17 @@ function updateCartStorage(cart) {
 
 
 
+
+
 // Fonction pour ouvrir le modal avec les détails de l'image
 function openModal(index) {
     var modalImage = document.getElementById('modalImage');
     var modalPrix = document.getElementById('modalPrix');
     var prixTotalElement = document.getElementById('prixTotal');
 
-    // Mise à jour de l'image et du prix en fonction de l'index (tableau Compositions_Artistiques_Array )
-    modalImage.src = 'Images/Compositions_Artistiques/' + Compositions_Artistiques_Array[index].url;
-    modalPrix.textContent = 'Prix: ' + Compositions_Artistiques_Array[index].prix + ' $';
+    // Mise à jour de l'image et du prix en fonction de l'index (tableau Portraits_Array )
+    modalImage.src = 'Images/Portraits/' + Portraits_Array[index].url;
+    modalPrix.textContent = 'Prix: ' + Portraits_Array[index].prix + ' $';
 
     // La quantité est par défaut mise à 1
     quantityInput.value = 1;
@@ -63,38 +65,37 @@ function updatePrixTotal() {
 
     var prixTotalElement = document.getElementById('prixTotal');
     
-    // Récupérer la quantité et le prix unitaire dans le tableau (Compositions_Artistiques_Array)
+    // Récupérer la quantité et le prix unitaire dans le tableau (Portraits_Array)
     var quantity = parseInt(quantityInput.value);
-    var prixUnitaire = Compositions_Artistiques_Array[currentIndex].prix;
+    var prixUnitaire = Portraits_Array[currentIndex].prix;
 
     // Calculer le prix total
     var prixTotal = quantity * prixUnitaire;
 
-    // Mettre à jour l'affichage du prix total
-    prixTotalElement.textContent = 'Prix total: ' + prixTotal + ' $';
+    
 }
 
 
 // Fonction pour ajouter un article au panier
 function addToCart() {
-    // Récupérer la quantité depuis la liste déroulante
+
+   
     var quantity = parseInt(quantityInput.value);
+
+  
 
     // Récupérer le panier depuis le localStorage
     var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-
     // Ajouter l'article avec les détails actuels
     cart.push({
-        nom: Compositions_Artistiques_Array[currentIndex].nom,
-        prix: Compositions_Artistiques_Array[currentIndex].prix,
+        nom: Portraits_Array[currentIndex].nom,
+        prix: Portraits_Array[currentIndex].prix,
         quantite: quantity,
-        imageUrl: Compositions_Artistiques_Array[currentIndex].url
+        imageUrl: Portraits_Array[currentIndex].url
     });
 
-    // Mettre à jour la liste déroulante avec la nouvelle quantité
-    quantityInput.value = quantity;
-
+    
     // Mettre à jour le panier dans le localStorage
     updateCartStorage(cart);
 }
@@ -117,10 +118,10 @@ function updatePrixTotal() {
     var prixTotalElement = document.getElementById('prixTotal');
 
     // Vérifier que currentIndex est défini
-    if (typeof currentIndex !== 'undefined' && Compositions_Artistiques_Array[currentIndex]) {
+    if (typeof currentIndex !== 'undefined' && Portraits_Array[currentIndex]) {
         // Récupérer la quantité et le prix unitaire
         var quantity = parseInt(quantityInput.value);
-        var prixUnitaire = Compositions_Artistiques_Array[currentIndex].prix;
+        var prixUnitaire = Portraits_Array[currentIndex].prix;
 
         // Calculer le prix total
         var prixTotal = quantity * prixUnitaire;

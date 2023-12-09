@@ -10,13 +10,14 @@
     <link rel="stylesheet" type="text/css" href="compositions_artistiques.css">
 </head>
 
-<body>
+<body onload="loadCart()">
 
     <div class="container-fluid p-4 d-flex  align-items-center ">
 
         <h1 class="text-center w-100 mb-4 p-3">COMPOSITIONS ARTISTIQUES</h1>
         <div class="col-auto d-flex  ">
-            
+            <!-- Icône panier et nombre d'articles-->
+
             <div class="panier d-flex  align-items-center align-self-end " id="lien_page_panier">
                 <span class="nombre_d_articles m-0 custom-position " id="nombre_d_articles"> 0 </span>
                 <a href="panier.html">
@@ -28,13 +29,13 @@
         </div>
     </div>
 
-    <!-- START container -->
+    <!-- START container d'images-->
     <div class="container-lg my-5">
-        <!-- class container is required when using Bootstrap's grid system -->
+        
         <div class="row" data-masonry='{"percentPosition": true }'>
-            <!-- Créer 1 row seulement -->
             
-            <!-- Images placées directement dans le HTML -->
+            
+            
             <div class="col-sm-6 col-lg-4 p-1">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(0)">
                     <img id="image0" src="Images/Compositions_artistiques/bodypainting-4696543_1280.jpg"
@@ -122,8 +123,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <!-- Bouton d'achat -->
-                    <button type="button" class="btn btn-primary btn-add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+                    <!-- Bouton d'ajout au panier -->
+                    <button type="button" class="btn btn-primary btn-add-to-cart" onclick="addToCart()">Ajouter votre sélection au panier</button>
                 </div>
             </div>
         </div>
