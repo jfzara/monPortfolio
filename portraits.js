@@ -153,7 +153,7 @@ function updateCartCount(cart) {
 
     // Mise à jour du style en fonction du nombre d'articles
     if (cart > 0) {
-        cartElement.style.color = 'blue';
+        cartElement.style.color = 'rgb(49, 49, 199)';
         cartElement.style.fontWeight = '600';
     } else {
         cartElement.style.color = 'black';

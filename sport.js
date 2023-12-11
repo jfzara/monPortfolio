@@ -1,15 +1,15 @@
 // Tableau des images
 var Sport_Array = [
-    { nom: 'Sport1', prix: 500, url: 'bodypainting-4696543_1280.jpg' },
-    { nom: 'Sport2', prix: 300, url: 'art-2610961_1280.jpg' },
-    { nom: 'Sport3', prix: 800, url: 'fantasy-2767173_1280.jpg' },
-    { nom: 'Sport4', prix: 400, url: 'face-2889961_1280.jpg' },
-    { nom: 'Sport5', prix: 600, url: 'man-80101_1280.jpg' },
-    { nom: 'Sport6', prix: 350, url: 'paint-2985569_640.jpg' },
-    { nom: 'Sport7', prix: 900, url: 'silhouette-2589471_640.jpg' },
-    { nom: 'Sport8', prix: 250, url: 'woman-7697743_1280.jpg' },
-    { nom: 'Sport9', prix: 700, url: 'woman-5953619_1280.jpg' },
-    { nom: 'Sport10', prix: 450, url: 'umbrellas-1834286_640.jpg' },
+    { nom: 'Sport1', prix: 500, url: 'baseball-7985433_1280.jpg' },
+    { nom: 'Sport2', prix: 300, url: 'basketball-95607_1280.jpg' },
+    { nom: 'Sport3', prix: 800, url: 'swimmers-79592_1280.jpg' },
+    { nom: 'Sport4', prix: 400, url: 'surfing-926822_1280.jpg' },
+    { nom: 'Sport5', prix: 600, url: 'superbike-930715_1280.jpg' },
+    { nom: 'Sport6', prix: 350, url: 'stadium-931975_1280.jpg' },
+    { nom: 'Sport7', prix: 900, url: 'rugby-78193_1280.jpg' },
+    { nom: 'Sport8', prix: 250, url: 'referee-1488156_1280.jpg' },
+    { nom: 'Sport9', prix: 700, url: 'rugby-78193_1280.jpg' },
+    { nom: 'Sport10', prix: 450, url: 'kettlebell-3293475_1280.jpg' },
 ];
 
 // Variables globales
@@ -34,14 +34,13 @@ function updateCartStorage(cart) {
 
  
 
-// Fonction pour ouvrir le modal avec les détails de l'image
 function openModal(index) {
     var modalImage = document.getElementById('modalImage');
     var modalPrix = document.getElementById('modalPrix');
     var prixTotalElement = document.getElementById('prixTotal');
 
-    // Mise à jour de l'image et du prix en fonction de l'index (tableau Sport_Array )
-    modalImage.src = 'Images/Sport/' + Sport_Array[index].url;
+    // Mise à jour de l'image et du prix en fonction de l'index (tableau Sport_Array)
+    modalImage.src = 'Images/Sport/' + Sport_Array[index].url;  
     modalPrix.textContent = 'Prix: ' + Sport_Array[index].prix + ' $';
 
     // La quantité est par défaut mise à 1
@@ -52,7 +51,7 @@ function openModal(index) {
 
     // Mise à jour du prix total en fonction de la quantité d'articles (produit prix * quantité)
     updatePrixTotal();
-    
+
     // Auditeur d'événements pour le changement de quantité (input de l'utilisateur)
     quantityInput.addEventListener('input', function () {
         updatePrixTotal(); // Appel de la fonction à l'intérieur de l'auditeur d'événements
@@ -151,7 +150,7 @@ function updateCartCount(cart) {
 
     // Mise à jour du style en fonction du nombre d'articles
     if (cart > 0) {
-        cartElement.style.color = 'blue';
+        cartElement.style.color = 'rgb(49, 49, 199)';
         cartElement.style.fontWeight = '600';
     } else {
         cartElement.style.color = 'black';

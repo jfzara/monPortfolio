@@ -1,43 +1,121 @@
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-10px); }
-    50% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(-10px); }
-  }
-  
-  .fade-in-out {
-    animation: fadeInOut 1.7s ease-in-out;
-  }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+/* Styles pour la navigation */
 nav {
-
-margin-left: 22%;
-
-}
-.nav-link {
-    font-size: 1 rem;
-    text-transform: uppercase;
-    color: #5f5c5c8a; /* Couleur du texte au survol */
+  margin-left: 22%;
 }
 
-/* Style pour l'animation de survol des liens du nav */
-.navbar-nav .nav-item .nav-link {
-    position: relative;
-    transition: color 0.3s ease-in-out; /* Animation de couleur pendant 0.3 seconde avec une courbe d'accélération/décélération */
-  }
-  
-  /* Animation de soulignement au survol */
-  .navbar-nav .nav-item .nav-link:hover::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px; /* Ajustez la position du soulignement selon votre préférence */
-    width: 100%;
-    height: 2px; /* Épaisseur du soulignement */
-    background-color: #000000; /* Couleur du soulignement au survol */
-  }
-  
-  /* Animation de changement de couleur au survol */
-  .navbar-nav .nav-item .nav-link:hover {
-    color: #000000; /* Couleur du texte au survol */
-  }
+.navLink {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #5f5c5c8a; /* Couleur du texte au survol */
+  position: relative;
+  transition: color 0.3s ease-in-out; /* Animation de couleur pendant 0.3 seconde avec une courbe d'accélération/décélération */
+}
+
+/* Animation de soulignement au survol des liens du nav */
+.navbarNav .navItem .navLink:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Ajustez la position du soulignement selon votre préférence */
+  width: 100%;
+  height: 2px; /* Épaisseur du soulignement */
+  background-color: #000000; /* Couleur du soulignement au survol */
+}
+
+/* Animation de changement de couleur au survol des liens du nav */
+.navbarNav .navItem .navLink:hover {
+  color: #000000; /* Couleur du texte au survol */
+}
+
+#nombreDArticles {
+  position: absolute;
+  top: 24%;
+  left: 55%;
+}
+
+/* Styles pour la liste du panier */
+#panierListe li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles pour les boutons de suppression */
+#panierListe li button {
+  transition: background-color 0.3s ease-in-out; /* Animation de couleur de fond pendant 0.3 seconde avec une courbe d'accélération/décélération */
+  align-self: flex-end;
+}
+
+.btnSuccess:hover {
+  border: 2px rgb(49, 49, 199) solid;
+}
+
+.btnDanger:hover {
+  border: 2px #dc3545 solid;
+  color: gray;
+}
+#conteneurSucces{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  width: 600px;
+}
+#conteneurFacture p {
+  width: 450px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid rgb(49, 49, 199);
+  color: rgb(49, 49, 199);
+  margin: 0; /* Supprime la marge par défaut du paragraphe */
+  text-align: center;
+  animation: fadeIn 3s 1;
+}
+#conteneurRemerciement p {
+  width: 450px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid #28a745; /* Couleur verte pour le succès */
+  color: #28a745; /* Couleur verte pour le texte */
+  margin: 0;
+  text-align: center;
+  animation: fadeIn 3s 1;
+}
+#lienPagePanier {
+  display: flex;
+  align-items: center;
+}
+
+#nombreArticles {
+  position: relative;
+  left: 60%;
+}
+#viderPanier {
+  /* Styles par défaut */
+  border: 2px #dc3545 solid;
+  color: #dc3545;
+
+  /* Styles après validation de l'achat */
+  display: none; /* Masquer initialement le bouton */
+}
+
+#panierVide {
+  /* Styles pour le bouton "Panier vide" après validation de l'achat */
+  display: block; /* Afficher le bouton */
+  border: 2px black solid;
+  color: black;
+}

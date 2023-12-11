@@ -62,8 +62,17 @@ z-index: 5;
 border: 1px solid black;
 }
 
-
-
+/* Styles par défaut pour le bouton "Panier vide" */
+#viderPanier {
+  color: black;
+  border: 1px solid black;
+  border-radius: 0;
+}
+/* Au survol, fond rouge et police blanche */
+#viderPanier:hover {
+  background-color: red;
+  color: white;
+}
 
 
     
@@ -80,70 +89,3 @@ border: 1px solid black;
 
 
 
-/*fonctionnalités :
-
-faire disparaître les autres images pendant qu'une image grossit (fondu)
-possibilité d'ajouter l'image au panier
-possibilité de supprimer l'image du panier
-Facture
-bouton panier en forme d icône en haut 
-*/
-/*
-
-
-Au clic, renvoi vers page Panier/Achat etc
-
-Au clic, faire apparaître un texte explicatif de la photo) 
-Photo sélectionnée = affichage différent (exemple : plus lumineuse)
-
-possibilité de Drag and drop chaque produit dans le panier
-
-Au hover, faire apparaître le prix (peut être généré aléatoirement compris entre n $ et n+$: entre 150 et 1000
-
-Marquer les photos achetées par un visuel approprié
-
-
-
-
-
-
-
-
-Afficher changement de couleur sur panier pour marquer l etat du panier 
-
-NAVIGATION : possibilité de revenir dans les autres pages avec une petite ancre/icone (sport/portrait etc)
-
-
-
-https://www.youtube.com/watch?v=QghhoJBdw7A
-https://www.youtube.com/watch?v=snhpoxtLugU
-
-
-FORMULAIRE
-A REFLECHIR:
-
-A implementer maintenant:
-
-PHOTOS: texte lorem ipsum en bas, a gauche verticalement taille en pixel, a droite coin haut : drapeau avec 3 boutons Acheter Supprimer Liker
-
-possibilité de contacter le photographe via un formulaire pour commander une photo
-
-Effet de flou au clic + apparition du prix + taille  + apparition des boutons Acheter Supprimer et liker (animation)
-
-
-
-PANIER:0 articles= color:black; sinon, color: blue
-
-Mettre a jour le projet sur Github
-
-
-
-Implementer les points de rupture Bootsrap
-
-
-IMPLEMENTÉ:
-
-Faire 3 colonnes
-Mettre le panier en Bootstrap
-
-*/
