@@ -3,7 +3,14 @@ const panierListeElement = document.getElementById('panierListe');
 const totalPrixElement = document.getElementById('totalPrix');
 const nombreArticlesElement = document.getElementById('nombreArticles');
 
-
+// Fonction pour déclencher un cignotement du bouton "Panier vide" toutes les 3 secondes
+function clignotementPanierVide() {
+  const panierVideButton = document.getElementById('panierVide');
+  panierVideButton.style.animation = 'none'; // Réinitialise l'animation
+  setTimeout(() => {
+    panierVideButton.style.animation = 'blinkAnimation 0.5s infinite 1s'; // Redémarre l'animation après le délai
+  }, 10); // Une petite attente pour assurer la réinitialisation
+}
 
 function isQuantityValid(quantity) {
   return quantity > 0 && quantity <= 99;
@@ -228,16 +235,16 @@ totalPrixElement.textContent = '';
 
   // Affiche la facture avec le total calculé
   afficherFacture(total);
-  
-  
-
   afficherRemerciement();
 }
 
 // Affiche la facture avec le total passé en paramètre
 function afficherFacture(total) {
+var numeroCommande = Math.floor(Math.random() * 9000000) + 1000000;
+
   const factureElement = document.createElement('div');
   factureElement.innerHTML = `<h3>Facture</h3>
+    <p>Numéro de commande: ${numeroCommande}<br>
     <p>Date: ${new Date().toLocaleDateString()}<br>
     Total: ${total.toFixed(2)} $</p>`;
 
@@ -311,4 +318,10 @@ function removeAllOfType(article) {
 // Appel à updatePanier lors du chargement de la page
 window.onload = function () {
   updatePanier();
+  clignotementPanierVide();
+
+  // Appeler la fonction clignotementPanierVide toutes les 3 secondes pour un clignotement continu
+  setInterval(() => {
+    clignotementPanierVide();
+  }, 1000);
 };

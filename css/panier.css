@@ -62,21 +62,25 @@ text-decoration: underline;
 #conteneurFacture p {
   width: 450px;
   padding: 10px;
-  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
   background-color: white;
-  border: 2px solid rgb(49, 49, 199);
-  color: rgb(49, 49, 199);
-  margin: 0; /* Supprime la marge par défaut du paragraphe */
+  border: 1px solid #28a745;
+  border-radius: 1.5px 1.5px 0px 0px;
+  color: black;
+  margin: 0; 
+  margin-bottom: 30px;
   text-align: center;
   animation: fadeIn 3s 1;
 }
 #conteneurRemerciement p {
   width: 450px;
   padding: 10px;
-  border-radius: 5px;
-  background-color: white;
-  border: 2px solid #28a745; /* Couleur verte pour le succès */
-  color: #28a745; /* Couleur verte pour le texte */
+  margin-top: 30px;
+  background-color: #28a745;
+  border: 2px solid ; 
+  
+  color: white;  
   margin: 0;
   text-align: center;
   animation: fadeIn 3s 1;
@@ -99,9 +103,21 @@ text-decoration: underline;
   display: none; /* Masquer initialement le bouton */
 }
 
-#panierVide {
-  /* Styles pour le bouton "Panier vide" après validation de l'achat */
-  display: block; /* Afficher le bouton */
-  border: 2px black solid;
-  color: black;
+@keyframes blinkAnimation {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5; /* Réduire l'opacité à mi-chemin pour un effet plus doux */
+  }
 }
+
+#panierVide {
+  display: block;
+  border: 2px rgb(74, 38, 38) solid;
+  color: black;
+  animation: blinkAnimation 10s 16; /* Animation de 10 secondes, répétée 16 fois*/
+}
+
+
+
