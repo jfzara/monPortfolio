@@ -1,0 +1,83 @@
+* {
+
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1{
+  font-weight: 500;
+}
+
+nav a {
+color: gray;
+}
+
+nav a:hover{
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
+/* Styles par défaut pour le bouton "Panier vide" et "Vider le panier" */
+#viderPanier
+{
+  width: 150px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  outline: none;
+}
+/* Au survol, fond rouge et police blanche pour le bouton "Panier vide" */
+#viderPanier {
+  background-color:white;
+  color: red;
+  border: 1px solid red;
+  margin-left: 20px;
+}
+
+/* Au survol, fond rouge et police blanche pour le bouton "Vider le panier" */
+#viderPanier:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Styles pour le bouton "Panier vide" */
+#panierVideBtn {
+  border-radius: 0px;
+  background-color: white;
+  margin-left: 55px;
+  color: black;
+  border: 1px solid black;
+}
+
+/* Styles pour l'icône panier */
+.panier {
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Styles pour le nombre d'articles dans l'icône panier */
+.nombre_d_articles {
+  position: absolute;
+  top: 28%;
+  left: 36%;
+ 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles pour la navigation */
+nav {
+  margin-left: 22%;
+  animation: fadeIn 1s ease;
+}

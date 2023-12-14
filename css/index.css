@@ -1,0 +1,122 @@
+
+* {
+
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+  
+  }
+
+#logo-link {
+    text-decoration: none; /* remove underline */
+    color: black; /* change text color */
+    font-weight: normal; /* remove bold */
+    padding-left: 20px;
+    position: relative;
+    left: -20px;
+}
+
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 27px;
+}
+
+footer {
+    
+    font-size: 11px;
+    text-align: center; /* align text */
+    color: grey; /* change text color */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+}
+
+h1 {
+    text-align: center; /* align text */
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+
+
+/************** social media icon *******************/
+
+.social-media-icon li {
+    list-style-type: none; /* remove bullet */
+    display: inline-block; /* create horizontal list */
+}
+
+.social-media-icon a {
+    text-decoration: none; /* remove underline */
+    color: black;
+}
+
+.social-media-icon ul {
+    text-align: center; /* center icon */
+    position: relative;
+    left: -30px;
+}
+
+
+.social-media-icon {
+    margin-bottom: 60px; /* add space under social media icon */
+}
+
+.social-media-icon li:nth-child(1) {
+    padding-right: 10px; /* add space between icon */
+}
+
+.social-media-icon li:nth-child(2) {
+    padding-left: 10px; /* add space between icon */
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    position: relative;
+    left: -20px;
+}
+nav a {
+    list-style-type: none;
+    text-decoration: none;
+   color: gray;
+}
+nav li {
+    list-style-type: none;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+nav a:hover{
+   color: black;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Styles pour la navigation */
+  nav, h1, .social-media-icon ul {
+  
+    animation: fadeIn 2s ease;
+  }
