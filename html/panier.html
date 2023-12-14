@@ -5,88 +5,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panier</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../css/panier.css">
+  <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Lien vers la feuille de style Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Lien vers la feuille de style personnalisée pour le panier -->
+    <link rel="stylesheet" type="text/css" href="../css/panier.css">
 </head>
 
 <body onload="loadCart()">
 
-  <!-- START Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <div class="container">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="nature.html">NATURE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ville.html">VILLE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mariage.html">MARIAGE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portraits.html">PORTRAITS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sport.html">SPORT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="compositions_artistiques.html">COMPOSITIONS ARTISTIQUES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">ACCUEIL</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- END Nav Bar -->
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="nature.html">NATURE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ville.html">VILLE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mariage.html">MARIAGE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="portraits.html">PORTRAITS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sport.html">SPORT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="compositions.html">COMPOSITIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">ACCUEIL</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-  <div class="container-fluid p-4 d-flex align-items-center">
-    <h1 class="text-center w-100 mb-4 p-3" id="titrePagePanier">PANIER </h1>
-    <div class="col-auto d-flex  ">
-      <!-- Icône panier et nombre d'articles-->
+    <!-- Section d'en-tête -->
+    <div class="container-fluid p-4 d-flex align-items-center">
+        <!-- Titre de la page -->
+        <h1 class="text-center w-100 mb-4 p-3" id="titrePagePanier">PANIER </h1>
+        <!-- Icône du panier, nombre d'articles et boutons associés -->
+        <div class="col-auto d-flex">
+            <div class="panier d-flex align-items-center align-self-end " id="lienPagePanier">
+                <span class="nombreArticles m-0 customPosition " id="nombreArticles"> </span>
+                <a href="panier.html">
+                    <img src="../images/Icones/icons8-cart-50.png" alt="icône panier" id="iconePanier">
+                </a>
+            </div>
+            <button id="viderPanier" onclick="viderPanier()" class="btn btn-outline-danger ms-5" disabled>Panier vide</button>
+            <button id="panierVide" onclick="panierVide()" class="btn btn-outline-danger ms-5" style="display: none;" disabled>Panier vide</button>
+        </div>
+    </div>
 
+    <!-- Conteneur d'articles -->
+    <div class="container-lg my-5">
+        <div>
+            <h2 id="titreListe">Articles </h2>
+            <ul id="panierListe"></ul>
+        </div>
+        <!-- Total du panier -->
+        <div>
+            <h2 id="titreTotal">Total</h2>
+            <p id="totalPrix"></p>
+        </div>
+        <!-- Bouton de validation d'achat -->
+        <div>
+            <button onclick="validerAchat()" class="btn btn-primary" id="validerAchatButton">Valider l'achat</button>
+        </div>
+    </div>
 
-      <div class="panier d-flex  align-items-center align-self-end " id="lienPagePanier">
-          <span class="nombreArticles m-0 customPosition " id="nombreArticles">  </span>
-          <a href="panier.html">
-          <img src="../images/Icones/icons8-cart-50.png" alt="icône panier" id="iconePanier">
-          </a>
-      </div>
-      <button id="viderPanier" onclick="viderPanier()" class="btn btn-outline-danger ms-5" disabled>Panier vide</button>
-      <button id="panierVide" onclick="panierVide()" class="btn btn-outline-danger ms-5" style="display: none;" disabled>Panier vide</button>
+    <!-- Conteneur pour les messages de succès -->
+    <div id="conteneurSucces">
+        <div id="conteneurFacture"></div>
+        <div id="conteneurRemerciement"></div>
     </div>
-  </div>
 
-  <div class="container-lg my-5">
-    <div>
-      <h2 id="titreListe">Articles </h2>
-      <ul id="panierListe"></ul>
-    </div>
-    <div>
-      <h2 id="titreTotal">Total</h2>
-      <p id="totalPrix"></p>
-    </div>
-    
-    <div>
-      <button onclick="validerAchat()" class="btn btn-primary" id="validerAchatButton">Valider l'achat</button>
-    </div>
-  </div>
-  <div id="conteneurSucces">
-    <div id="conteneurFacture"></div>
-    <div id="conteneurRemerciement"></div>
-  </div>
-  <script src="../js/panier.js"></script>
-  
- 
-  <!-- Link to Bootstrap's JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Script pour le panier -->
+    <script src="../js/panier.js"></script>
+
+    <!-- Lien vers le script Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

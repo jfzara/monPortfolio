@@ -1,28 +1,29 @@
+/* Réinitialisation des styles de base et choix de police */
 * {
-
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
 }
 
-h1{
+/* Styles pour les titres de niveau 1 */
+h1 {
   font-weight: 500;
+  animation: fadeIn 1s ease-in;/* Animation de fondu en 1 seconde */
 }
 
+/* Styles pour les liens de navigation par défaut */
 nav a {
-color: gray;
+  color: gray;
 }
 
-nav a:hover{
+/* Styles pour les liens de navigation au survol */
+nav a:hover {
   color: black;
   font-weight: bold;
   text-decoration: underline;
 }
 
-
-
-/* Styles par défaut pour le bouton "Panier vide" et "Vider le panier" */
-#viderPanier
-{
+/* Styles par défaut pour les boutons "Panier vide" et "Vider le panier" */
+#viderPanier {
   width: 150px;
   border-radius: 5px;
   background-color: white;
@@ -30,25 +31,22 @@ nav a:hover{
   border: 1px solid black;
   outline: none;
 }
-/* Au survol, fond rouge et police blanche pour le bouton "Panier vide" */
-#viderPanier {
-  background-color:white;
-  color: red;
-  border: 1px solid red;
-  margin-left: 20px;
-}
 
-/* Au survol, fond rouge et police blanche pour le bouton "Vider le panier" */
+
+
+/* Au survol, fond rouge et texte blanc pour le bouton "Vider le panier" */
 #viderPanier:hover {
   background-color: red;
-  color: white;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border: 1px solid red;
 }
 
 /* Styles pour le bouton "Panier vide" */
 #panierVideBtn {
   border-radius: 0px;
   background-color: white;
-  margin-left: 55px;
+  margin-left: 35px;
   color: black;
   border: 1px solid black;
 }
@@ -64,19 +62,20 @@ nav a:hover{
   position: absolute;
   top: 28%;
   left: 36%;
- 
 }
 
+/* Animation de fondu */
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-/* Styles pour la navigation */
+/* Styles pour la navigation avec animation de fondu */
 nav {
   margin-left: 22%;
   animation: fadeIn 1s ease;

@@ -1,122 +1,135 @@
-
+/* Réinitialisation des styles et choix de police pour l'ensemble du document */
 * {
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+}
 
-    box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-  
-  }
-
+/* Styles pour le lien du logo dans l'en-tête */
 #logo-link {
-    text-decoration: none; /* remove underline */
-    color: black; /* change text color */
-    font-weight: normal; /* remove bold */
-    padding-left: 20px;
-    position: relative;
-    left: -20px;
+  text-decoration: none;
+  /* Supprime le soulignement */
+  color: black;
+  /* Change la couleur du texte */
+  font-weight: normal;
+  /* Retire le style en gras */
+  padding-left: 20px;
+  position: relative;
+  left: -20px;
 }
 
-
-
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 27px;
+/* Styles pour l'en-tête */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 27px;
 }
 
+/* Styles pour le pied de page */
 footer {
-    
-    font-size: 11px;
-    text-align: center; /* align text */
-    color: grey; /* change text color */
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 60px;
+  font-size: 11px;
+  text-align: center;
+  /* Aligne le texte au centre */
+  color: grey;
+  /* Change la couleur du texte */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 60px;
 }
 
+/* Styles pour les titres de niveau 1 */
 h1 {
-    text-align: center; /* align text */
-    margin-bottom: 50px;
-    margin-top: 60px;
+  text-align: center;
+  /* Aligne le texte au centre */
+  margin-bottom: 50px;
+  margin-top: 60px;
 }
 
-
-
-/************** social media icon *******************/
-
+/* Styles pour les icônes des réseaux sociaux */
 .social-media-icon li {
-    list-style-type: none; /* remove bullet */
-    display: inline-block; /* create horizontal list */
+  list-style-type: none;
+  /* Supprime les puces */
+  display: inline-block;
+  /* Affiche les éléments en ligne */
 }
 
 .social-media-icon a {
-    text-decoration: none; /* remove underline */
-    color: black;
+  text-decoration: none;
+  /* Supprime le soulignement */
+  color: black;
 }
 
 .social-media-icon ul {
-    text-align: center; /* center icon */
-    position: relative;
-    left: -30px;
+  text-align: center;
+  /* Centre les icônes */
+  position: relative;
+  left: -30px;
 }
 
-
 .social-media-icon {
-    margin-bottom: 60px; /* add space under social media icon */
+  margin-bottom: 60px;
+  /* Ajoute de l'espace en dessous des icônes */
 }
 
 .social-media-icon li:nth-child(1) {
-    padding-right: 10px; /* add space between icon */
+  padding-right: 10px;
+  /* Ajoute de l'espace entre les icônes */
 }
 
 .social-media-icon li:nth-child(2) {
-    padding-left: 10px; /* add space between icon */
+  padding-left: 10px;
+  /* Ajoute de l'espace entre les icônes */
 }
 
-
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
+/* Styles pour la section principale */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-nav ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 25px;
-    position: relative;
-    left: -20px;
+/* Styles pour la navigation */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  position: relative;
+  left: -20px;
 }
+
 nav a {
-    list-style-type: none;
-    text-decoration: none;
-   color: gray;
-}
-nav li {
-    list-style-type: none;
-    text-decoration: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-nav a:hover{
-   color: black;
+  list-style-type: none;
+  text-decoration: none;
+  color: gray;
 }
 
+nav li {
+  list-style-type: none;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: black;
+}
+
+/* Animation de fondu pour la navigation, les titres h1 et la liste d'icônes sociales */
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
   }
-  
-  /* Styles pour la navigation */
-  nav, h1, .social-media-icon ul {
-  
-    animation: fadeIn 2s ease;
+
+  to {
+    opacity: 1;
   }
+}
+
+/* Applique l'animation de fondu à la navigation, les titres h1 et la liste d'icônes sociales */
+nav,
+h1,
+.social-media-icon ul {
+  animation: fadeIn 2s ease;
+}

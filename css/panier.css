@@ -1,8 +1,9 @@
-
+/* Animation de fondu */
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -11,18 +12,17 @@
 /* Styles pour la navigation */
 nav {
   margin-left: 22%;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 2s ease;
 }
 
-
-
-/* Animation de changement de couleur au survol des liens du nav */
+/* Animation de changement de couleur au survol des liens de la navigation */
 nav a:hover {
   color: black;
-font-weight: bold;
-text-decoration: underline;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
+/* Styles pour le nombre d'articles */
 #nombreDArticles {
   position: absolute;
   top: 24%;
@@ -39,7 +39,8 @@ text-decoration: underline;
 
 /* Styles pour les boutons de suppression */
 #panierListe li button {
-  transition: background-color 0.3s ease-in-out; /* Animation de couleur de fond pendant 0.3 seconde avec une courbe d'accélération/décélération */
+  transition: background-color 0.3s ease-in-out;
+  /* Animation de couleur de fond pendant 0.3 seconde avec une courbe d'accélération/décélération */
   align-self: flex-end;
 }
 
@@ -51,7 +52,9 @@ text-decoration: underline;
   border: 2px #dc3545 solid;
   color: gray;
 }
-#conteneurSucces{
+
+/* Conteneur de succès */
+#conteneurSucces {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -59,6 +62,8 @@ text-decoration: underline;
   margin: auto;
   width: 600px;
 }
+
+/* Conteneur de la facture */
 #conteneurFacture p {
   width: 450px;
   padding: 10px;
@@ -68,56 +73,74 @@ text-decoration: underline;
   border: 1px solid #28a745;
   border-radius: 1.5px 1.5px 0px 0px;
   color: black;
-  margin: 0; 
+  margin: 0;
   margin-bottom: 30px;
   text-align: center;
-  animation: fadeIn 3s 1;
+  animation: fadeIn 0.7s 1;
 }
+
+/* Conteneur de remerciement */
 #conteneurRemerciement p {
   width: 450px;
   padding: 10px;
   margin-top: 30px;
   background-color: #28a745;
-  border: 2px solid ; 
-  
-  color: white;  
+  border: 2px solid;
+  color: white;
   margin: 0;
   text-align: center;
-  animation: fadeIn 3s 1;
 }
+
+/* Lien vers la page du panier */
 #lienPagePanier {
   display: flex;
   align-items: center;
 }
 
+/* Nombre d'articles */
 #nombreArticles {
   position: relative;
   left: 60%;
 }
+
+/* Bouton pour vider le panier */
 #viderPanier {
   /* Styles par défaut */
   border: 2px #dc3545 solid;
   color: #dc3545;
 
   /* Styles après validation de l'achat */
-  display: none; /* Masquer initialement le bouton */
+  display: none;
+  /* Masquer initialement le bouton */
 }
 
+/* Animation de clignotement */
 @keyframes blinkAnimation {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
-    opacity: 0.5; /* Réduire l'opacité à mi-chemin pour un effet plus doux */
+    opacity: 0.5;
+    /* Réduire l'opacité à mi-chemin pour un effet plus doux */
   }
 }
 
+/* Panier vide avec animation de clignotement */
 #panierVide {
   display: block;
   border: 2px rgb(74, 38, 38) solid;
   color: black;
-  animation: blinkAnimation 10s 16; /* Animation de 10 secondes, répétée 16 fois*/
+  animation: blinkAnimation 10s 16;
+  /* Animation de 10 secondes, répétée 16 fois */
 }
 
+h1{
+  animation: fadeIn 0.5s ease;
+}
 
-
+h3{
+  padding-bottom: 20px;
+}

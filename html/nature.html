@@ -5,181 +5,180 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nature</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/nature.css">
+      <!-- Lien vers la feuille de style Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- Lien vers la feuille de style personnalisée -->
+  <link rel="stylesheet" type="text/css" href="../css/nature.css">
 </head>
 
 <body onload="loadCart()">
 
-    <!-- START Nav Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="nature.html">NATURE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ville.html">VILLE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="mariage.html">MARIAGE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="portraits.html">PORTRAITS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sport.html">SPORT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="compositions_artistiques.html">COMPOSITIONS ARTISTIQUES</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">ACCUEIL</a>
-              </li>
-            </ul>
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="nature.html">NATURE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ville.html">VILLE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mariage.html">MARIAGE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portraits.html">PORTRAITS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sport.html">SPORT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="compositions.html">COMPOSITIONS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">ACCUEIL</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-4 d-flex align-items-center">
+      <!-- Titre de la page -->
+      <h1 class="text-center w-100 mb-4 p-3">NATURE</h1>
+      <div class="col-auto d-flex">
+          <!-- Icône du panier et nombre d'articles -->
+          <div class="panier d-flex align-items-center align-self-end" id="lien_page_panier">
+              <span class="nombre_d_articles m-0 custom-position " id="nombre_d_articles"> 0 </span>
+              <a href="panier.html">
+                  <img src="../images/Icones/icons8-cart-50.png" alt="icône panier" class="panier">
+              </a>
           </div>
-        </div>
-      </nav>
-      <!-- END Nav Bar -->
+          <!-- Boutons pour le panier -->
+          <button id="panierVideBtn" class="btn btn-outline-danger" style="border-radius: 0px; background-color: white; color: black; border-color: black;">
+              Panier vide !
+          </button>
+          <button id="viderPanier" class="btn btn-outline-danger" onclick="viderPanier()" style="border-radius: 5px; background-color: white; color: red; border-color: red;">
+              Vider le panier
+          </button>
+      </div>
+  </div>
 
-    <div class="container-fluid p-4 d-flex  align-items-center ">
-
-        <h1 class="text-center w-100 mb-4 p-3">NATURE</h1>
-        <div class="col-auto d-flex  ">
-            <!-- Icône panier et nombre d'articles-->
-
-            <div class="panier d-flex  align-items-center align-self-end " id="lien_page_panier">
-                <span class="nombre_d_articles m-0 custom-position " id="nombre_d_articles"> 0 </span>
-                <a href="panier.html">
-                <img src="../images/Icones/icons8-cart-50.png" alt="icône panier" class="panier">
-                </a>
-            </div>
-            <button id="panierVideBtn"  class="btn btn-outline-danger" style="border-radius: 0px; background-color: white; color: black; border-color: black;">
-                Panier vide !
-              </button>
-              <button id="viderPanier" class="btn btn-outline-danger" onclick="viderPanier()" style="border-radius: 5px; background-color: white; color: red; border-color: red;">
-                Vider le panier
-              </button>
-        </div>
-    </div>
-
-    <!-- START container d'images-->
-    <div class="container-lg my-5">
+  <!-- Conteneur d'images -->
+  <div class="container-lg my-5">
         
-        <div class="row" data-masonry='{"percentPosition": true }'>
-            
-            
-           
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(0)">
-                    <img id="image0" src="../images/nature/nature0.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(1)">
-                    <img id="image1" src="../images/nature/nature1.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(2)">
-                    <img id="image2" src="../images/nature/nature2.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(3)">
-                    <img id="image3" src="../images/nature/nature3.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(4)">
-                    <img id="image4" src="../images/nature/nature4.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(5)">
-                    <img id="image5" src="../images/nature/nature5.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(6)">
-                    <img id="image6" src="../images/nature/nature6.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(7)">
-                    <img id="image7" src="../images/nature/nature7.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(8)">
-                    <img id="image8" src="../images/nature/nature8.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-            <div class="col-sm-6 col-lg-4 p-1">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(9)">
-                    <img id="image9" src="../images/nature/nature9.jpg"
-                        class="img-fluid" alt="Responsive image">
-                </a>
-            </div>
-
+    <div class="row" data-masonry='{"percentPosition": true }'>
+        
+        
+       
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(0)">
+                <img id="image0" src="../images/nature/nature0.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
         </div>
-    </div>
-    <!-- END container -->
 
-    <!-- START modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="" id="modalImage" class="img-fluid" alt="Responsive image">
-                    <p class="prix" id="modalPrix"></p>
-                     <!-- Ajout du champ de quantité -->
-                <label for="quantity">Quantité:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
-
-                <!-- Élément pour afficher le prix mis à jour -->
-                <p id="prixTotal"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <!-- Bouton d'ajout au panier -->
-                    <button type="button" class="btn btn-primary btn-add-to-cart" onclick="addToCart()">Ajouter au panier</button>
-                </div>
-            </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(1)">
+                <img id="image1" src="../images/nature/nature1.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
         </div>
-    </div>
-    <!-- END modal -->
 
-    <!-- Link to Bootstrap's JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <!-- Link to Masonry -->
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-        crossorigin="anonymous" async></script>
-    <script src="../js/nature.js"></script>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(2)">
+                <img id="image2" src="../images/nature/nature2.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(3)">
+                <img id="image3" src="../images/nature/nature3.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(4)">
+                <img id="image4" src="../images/nature/nature4.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(5)">
+                <img id="image5" src="../images/nature/nature5.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(6)">
+                <img id="image6" src="../images/nature/nature6.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(7)">
+                <img id="image7" src="../images/nature/nature7.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(8)">
+                <img id="image8" src="../images/nature/nature8.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 p-1">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="openModal(9)">
+                <img id="image9" src="../images/nature/nature9.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </a>
+        </div>
+
+    </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <img src="" id="modalImage" class="img-fluid" alt="Image responsive">
+                  <p class="prix" id="modalPrix"></p>
+                   <!-- Ajout du champ de quantité -->
+                  <label for="quantity">Quantité:</label>
+                  <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
+
+                  <!-- Élément pour afficher le prix mis à jour -->
+                  <p id="prixTotal"></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                  <!-- Bouton d'ajout au panier -->
+                  <button type="button" class="btn btn-primary btn-add-to-cart" onclick="addToCart()">Ajouter au panier</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Liens vers les scripts Bootstrap et Masonry -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+      crossorigin="anonymous" async></script>
+  <script src="../js/nature.js"></script>
 
 </body>
 
